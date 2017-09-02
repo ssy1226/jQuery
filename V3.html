@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery DOM操作</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<div id="alink">
+    <a href="v2.html" title="this is a link" class="tool">hello </a>
+</div>
+<div id="image">
+    <img src="timg.jpg" height="100px" width="100px">
+</div>
+<script>
+    $(function () {
+        $("#alink a").mouseover(function (e) {
+            var MyDiv="<div id='hello'>this is my description</div>"
+            $("body").append(MyDiv);
+            $("#hello").css({
+                "top":e.pageY,
+                "left":e.pageY
+            }).show("fast");
+            this.title="";
+
+        }).mouseout(function (e) {
+            $("#hello").remove();
+            this.title='this is a link';
+        }).mousemove(function (e) {
+            $("#hello").css({
+                "top":(e.pageY)+10+"px",
+                "left":(e.pageX)+10+"px",
+                "position":"absolute",
+                "fontSize":"15px"
+            });
+        })
+        $("#image").click(function (e) {
+            var Myimage="<img id='big' src='timg.jpg'>";
+            if($("#big").length===0){
+                $("body").append(Myimage);
+                $("#big").css({
+                    "width":"200",
+                    "height":"200",
+                    "position":"absolute",
+                    "margin":"auto"
+                })
+            }else{
+                $("#big").toggle();
+            }
+        })
+    })
+</script>
+</body>
+</html>

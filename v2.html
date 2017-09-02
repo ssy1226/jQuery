@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器</title>
+    <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+<div class="list">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>more</li>
+    </ul>
+</div>
+<div class="bnt">
+    简明显示
+</div>
+<script>
+    var el=$(".list ul li:gt(3):not(:last)");
+    el.hide();
+    var btn=$(".bnt");
+    btn.click(function () {
+        el.toggle("fast",function () {
+            btn.text("全部显示").css("color","blue");
+        });
+    });
+//    btn.click(function () {
+//        if (el.is(":visible")){
+//            el.hide();
+//            btn.text("全部显示").css("color","blue");
+//        }else{
+//            el.show();
+//            btn.text("简明显示").css("background","yellow");
+//        }
+//    })
+</script>
+<style type="text/css">
+    .list{
+        width: 500px;
+        margin: auto;
+        text-align: center;
+    }
+    .bnt{
+        width: 100px;
+        height: 40px;
+        margin: auto;
+        text-align: center;
+        line-height: 40px;
+    }
+    .list ul li{
+        display: inline-block;
+        height: 40px;
+        width: 100px;
+        border: solid 2px red;
+        margin: 0px;
+    }
+</style>
+</body>
+</html>

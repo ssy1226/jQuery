@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中</title>
+</head>
+<body>
+<div id="container">
+    <div id="box">
+        hello
+    </div>
+</div>
+
+</body>
+<style>
+    #container {
+        position: relative;
+        width: 600px;
+        height: 500px;
+        border: 1px solid #000;
+        display: table;
+        text-align: center;
+    }
+    /*#box {
+        margin: auto;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: blueviolet;
+        top: 0;
+        bottom: 0;
+        right: auto; left: 20px;
+        text-align: left;
+        overflow: auto;
+
+    } */
+    /*#box{*/
+        /*width: 300px;*/
+        /*height: 200px;*/
+        /*padding: 20px;*/
+        /*position: absolute;*/
+        /*top: 50%; left: 50%;*/
+        /*margin-left: -170px; !* (width + padding)/2 *!*/
+        /*margin-top: -120px; !* (height + padding)/2 *!*/
+        /*background: blueviolet;*/
+    /*}*/
+    #box{
+        display: inline-block;
+        vertical-align: middle;
+        width: 300px;
+        height: 200px;
+        background: blueviolet;
+}
+
+</style>
+</html>

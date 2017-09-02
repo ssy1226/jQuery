@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var v='cba';
+    (function () {
+        function A() {
+            var v='a';
+            this.getvar=function () {
+                console.log(v)
+            }
+        }
+        function B() {
+            var v='b'
+            A.call(this)
+        }
+            var b=new B();
+            b.getvar();
+    }())
+</script>
+</body>
+</html>

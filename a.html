@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a=0;
+    function A() {
+        this.a=1;
+        setTimeout(function () {
+           this.a=2 ;
+           try{
+               this.b='b';
+               throw '';
+           }catch(e){
+               this.b='bb'
+           }
+        },0)
+        this.b='bbb';
+    }
+    var aa=new A()
+    setTimeout(function () {
+        console.log(aa.a)
+        console.log(window.a)
+        console.log(aa.b)
+        console.log(window.b)
+    },0)
+    console.log((function (a,b) {
+        
+    }).length);
+</script>
+</body>
+</html>
